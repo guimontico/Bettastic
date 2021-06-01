@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid" style="margin-left: 2vh">
+    <a class="navbar-brand" href="#">Bettastic</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav col-lg-auto" style="margin-left: auto; margin-right: 15vh;">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/bets']" routerLinkActive="active" >Melhores Bets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/matches']" routerLinkActive="active" >Jogos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/turbine']" routerLinkActive="active" >Turbine</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav" dropdown style="margin-left: auto; margin-right: 10vh;">
+        <li class="nav-item dropdown">
+          <a id="button-animated" dropdownToggle class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Guilherme
+          </a>
+          <div id="dropdown-animated" *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="#">Histórico</a>
+            <a class="dropdown-item" href="#">Sair</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
