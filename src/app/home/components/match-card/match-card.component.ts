@@ -13,7 +13,7 @@ export class MatchCardComponent implements OnInit {
   mouseX = 0;
   mouseY = 0;
   mouseLeaveDelay: any;
-  dataImage = 'src/assets/carousel/chelsea.jpg'
+  dataImage = 'https://images.unsplash.com/photo-1517747614396-d21a78b850e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80'
 
   constructor() { }
   
@@ -43,21 +43,18 @@ export class MatchCardComponent implements OnInit {
     const rX = this.mousePX() * 30;
     const rY = this.mousePY() * -30;
     //console.log("rx: "+rX+", rY: "+rY);
-    return `rotate(${rX}deg) rotate(${rY}deg)`
+    return `rotateY(${rX}deg) rotateX(${rY}deg)`
   }
 
   cardBgTransform() {
     const tX = this.mousePX() * -40;
     const tY = this.mousePY() * -40;
     //console.log("tX: "+tX+", tY: "+tY);
-    return `translate(${tX}px, ${tY}px)`
+    return `translateX(${tX}px) translateY(${tY}px)`
   }
 
   cardBgImage() {
-    return {
-      //backgroundImage: 'https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop='
-      backgroundImage: `url(${this.dataImage})`
-    }
+    return `url(${this.dataImage})`
   }
 
   handleMouseMove(e: any) {

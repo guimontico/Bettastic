@@ -1,17 +1,21 @@
-<div #card class="card-wrap"
-    (mousemove)="handleMouseMove($event)"
-    (mouseenter)="handleMouseEnter()"
-    (mouseleave)="handleMouseLeave()"
-    >
-    <div class="card">
-        <div class="card-bg" 
-            [style.transform]="cardStyle()"
-            [style.background-image]="cardBgImage()"
-            [style.transform]="cardBgTransform()">
-        </div>
-        <div class="card-info">
-        <slot name="header"></slot>
-        <slot name="content"></slot>
+<div id="app" class="container" style="display: flex;">
+    <div #card class="card-wrap"
+        (mousemove)="handleMouseMove($event)"
+        (mouseenter)="handleMouseEnter()"
+        (mouseleave)="handleMouseLeave()"
+        ref="card">
+        <div class="card"
+        [style.transform]="cardStyle()">
+            <div class="card-bg" 
+                [style.transform]="cardBgTransform()"
+                [style.background-image]="cardBgImage()"
+            >
+            </div>
+            <div class="card-info">
+                <h1 slot="header">Canyons</h1>
+                <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    
+            </div>
         </div>
     </div>
 </div>
