@@ -23,14 +23,14 @@ import { CarouselComponent } from './home/components/carousel/carousel.component
     MatchesComponent,
     TurbineComponent,
     MatchCardComponent,
-    CarouselComponent
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
