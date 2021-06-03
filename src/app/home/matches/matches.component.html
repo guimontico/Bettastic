@@ -1,3 +1,5 @@
-<div id="app" class="container" style="display: flex;justify-content: space-evenly;" *ngFor="let game of games">
-  <app-match-card [cardTitle] = "game.cardTitle" [cardContent] = "game.cardContent" [backgroundImage] = "game.backgroundImage"></app-match-card>
+<div id="appMatch" >
+  <div *ngFor="let game of games">
+    <app-match-card [cardTitle] = "game.cardTitle" [cardContent] = "game.cardContent" [backgroundImage] = "game.backgroundImage"></app-match-card>
+  </div>
 </div>
