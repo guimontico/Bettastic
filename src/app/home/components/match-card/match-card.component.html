@@ -1,4 +1,4 @@
-<div id="appCard" style="width: 33%;">
+<div id="appCard" class="card-main">
     <div #card class="card-wrap"
         (mousemove)="handleMouseMove($event)"
         (mouseenter)="handleMouseEnter()"
@@ -12,8 +12,10 @@
             >
             </div>
             <div class="card-info">
-                <h1 slot="header">{{this.cardTitle}}</h1>
-                <p slot="content">{{this.cardContent}}</p>
+                <!-- <h1 slot="header">{{this.cardTitle}}</h1> -->
+                <!-- <p slot="content">{{this.cardContent}}</p> -->
+                <img id="teamHome" src={{this.teamHomeLogo}}>
+                <img id="teamAway" src={{this.teamAwayLogo}}>
             </div>
         </div>
     </div>

@@ -1,5 +1,11 @@
 <div id="appMatch" >
   <div *ngFor="let game of games">
-    <app-match-card [cardTitle] = "game.cardTitle" [cardContent] = "game.cardContent" [backgroundImage] = "game.backgroundImage"></app-match-card>
+    <app-match-card 
+      [cardTitle] = "game.cardTitle" 
+      [cardContent] = "game.cardContent" 
+      [backgroundImage] = "game.backgroundImage"
+      [teamHomeLogo] = "game.teamHome"
+      [teamAwayLogo] = "game.teamAway"
+    ></app-match-card>
   </div>
 </div>

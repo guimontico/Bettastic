@@ -19,6 +19,8 @@ export class MatchCardComponent implements OnInit {
   @Input() cardTitle!: string;
   @Input() cardContent!: string;
   @Input() backgroundImage!: string;
+  @Input() teamHomeLogo!: string;
+  @Input() teamAwayLogo!: string;
   
   @ViewChild('card') card!: ElementRef;
 
