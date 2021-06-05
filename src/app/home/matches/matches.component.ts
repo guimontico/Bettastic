@@ -37,6 +37,24 @@ export class MatchesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    getTeamsData()
   }
 
 }
+function getTeamsData() {
+  let url = "https://v3.football.api-sports.io/teams"
+  fetch("https://v3.football.api-sports.io/teams?id=33", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": "f24bb926904b30370886078867b9de5c"
+    }
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+
