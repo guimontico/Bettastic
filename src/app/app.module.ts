@@ -13,6 +13,8 @@ import { MatchesComponent } from './home/matches/matches.component';
 import { TurbineComponent } from './home/turbine/turbine.component';
 import { MatchCardComponent } from './home/components/match-card/match-card.component';
 import { CarouselComponent } from './home/components/carousel/carousel.component';
+import { FootballService } from './services/football/football.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,9 @@ import { CarouselComponent } from './home/components/carousel/carousel.component
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [FootballService, HttpClient],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA // Added for custom elements support

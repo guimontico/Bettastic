@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FootballService } from "../../services/football/football.service";
 
 @Component({
   selector: 'app-matches',
@@ -34,27 +35,13 @@ export class MatchesComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private footballService: FootballService) { }
 
-  ngOnInit(): void {
-    getTeamsData()
+  async ngOnInit(): Promise<void> {
+    const teamResult = await this.footballService.getTeam(33).toPromise()
+    let logo = teamResult.response[0].team.logo
+    console.log(teamResult);
+    
   }
-
-}
-function getTeamsData() {
-  let url = "https://v3.football.api-sports.io/teams"
-  fetch("https://v3.football.api-sports.io/teams?id=33", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "v3.football.api-sports.io",
-      "x-rapidapi-key": "f24bb926904b30370886078867b9de5c"
-    }
-  })
-  .then(response => {
-    console.log(response);
-  })
-  .catch(err => {
-    console.log(err);
-  });
 }
 
