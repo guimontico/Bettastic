@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BasketService } from 'src/app/services/football/basket.service';
 import { FootballService } from "../../services/football/football.service";
 
 @Component({
@@ -35,13 +36,12 @@ export class MatchesComponent implements OnInit {
     }
   ]
 
-  constructor(private footballService: FootballService) { }
+  constructor(private footballService: FootballService,
+              private basketService: BasketService,) { }
 
   async ngOnInit(): Promise<void> {
-    const teamResult = await this.footballService.getTeam(33).toPromise()
-    let logo = teamResult.response[0].team.logo
-    console.log(teamResult);
-    
+    const gamesFromDate = await this.basketService.getGamesFromDate('2021-06-07', '12', '2020-2021').toPromise()
+    console.log(gamesFromDate);
   }
 }
 
