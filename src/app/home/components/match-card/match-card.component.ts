@@ -47,8 +47,8 @@ export class MatchCardComponent implements OnInit {
   }
 
   cardBgTransform() {
-    const tX = this.mousePX() * -40;
-    const tY = this.mousePY() * -40;
+    const tX = this.mousePX() * -50;
+    const tY = this.mousePY() * -50;
     return `translateX(${tX}px) translateY(${tY}px)`
   }
 

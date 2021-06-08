@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
@@ -31,6 +32,20 @@ h1+p, p+p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#teamHome{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-150%, -50%);
+}
+
+#teamAway{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(30%, -50%);
 }
 
 .logo-Image {
@@ -117,13 +132,18 @@ h1+p, p+p {
   position: absolute;
   bottom: 0;
   color: #fff;
+  width: 100%;
+  height: 100%;
   // transform: translateY(40%);
   // transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   
   p {
-    opacity: 0;
-    text-shadow: rgba(black, 1) 0 2px 3px;
-    transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    font-family: 'Odibee Sans', cursive;
+    font-size: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-60%, -50%);
   }
   
   * {
