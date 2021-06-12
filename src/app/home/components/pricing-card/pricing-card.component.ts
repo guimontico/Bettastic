@@ -2,11 +2,11 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 
 @Component({
-  selector: 'app-match-card',
-  templateUrl: './match-card.component.html',
-  styleUrls: ['./match-card.component.scss']
+  selector: 'app-pricing-card',
+  templateUrl: './pricing-card.component.html',
+  styleUrls: ['./pricing-card.component.scss']
 })
-export class MatchCardComponent implements OnInit {
+export class PricingCardComponent implements OnInit {
   
   width = 0;
   height = 0;

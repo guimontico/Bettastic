@@ -1,4 +1,9 @@
+import { ElementRef } from '@angular/core';
+import { ViewChild } from '@angular/core';
+import { HostListener } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { BasketGames } from 'src/app/models/basketGame';
 import { BasketService } from 'src/app/services/football/basket.service';
 import { FootballService } from "../../services/football/football.service";
 
@@ -9,35 +14,53 @@ import { FootballService } from "../../services/football/football.service";
 })
 export class MatchesComponent implements OnInit {
 
-  games: any = []
-    // {
-    //   cardId: Number, 
-    //   cardTitle: String, 
-    //   cardContent: String, 
-    //   backgroundImage: String,
-    //   teamHome: String,
-    //   teamAway: String
-    // }
-  
+  sticky = false;
+  todayDate!: string;
+  subs: Subscription[] = [];
+  nbaGames!: BasketGames;
+  euroLeagueGames!: BasketGames;
+  nbbGames!: BasketGames;
+  acbGames!: BasketGames;
+  sliderConfig = {
+    slidesToShow: 9,
+    slidesToScroll: 2,
+    arrows: true,
+    autoplay: false
+  };
 
-  constructor(private footballService: FootballService,
-              private basketService: BasketService,) { }
+  @ViewChild('stickHeader') header!: ElementRef;
+  
+  constructor(private basketService: BasketService,
+              private footballService: FootballService,){}
 
   async ngOnInit(): Promise<void> {
-    const gamesFromDate = await this.basketService.getGamesFromDate('2021-06-07', '12', '2020-2021').toPromise()
-    console.log(gamesFromDate);
-      
-    gamesFromDate.response.forEach(((game: { week: any; teams: { home: { logo: any; name: any; }; away: { logo: any; name: any; }; }; status: { short: any; }; }) => {
-      let gameSet = {
-        cardId: 1, 
-        cardTitle: game.week, 
-        cardContent: game.week, 
-        backgroundImage: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80',
-        teamHome: game.teams.home.logo,
-        teamAway: game.teams.away.logo
-      };
-      this.games.push(gameSet)
-    }));
+    this.todayDate = new Date().toISOString().split('T')[0];
+    this.nbaGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
+    this.euroLeagueGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
+    this.nbbGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
+    this.acbGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
+
+    console.log(this.nbaGames);
+    console.log(this.euroLeagueGames);
+    console.log(this.nbbGames);
+    console.log(this.acbGames);
+    
+  }
+
+  ngOnDestroy(): void {
+    this.subs.map(s => s.unsubscribe());
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  // tslint:disable-next-line:typedef
+  handleScroll() {
+    const windowScroll = window.pageYOffset;
+
+    if (windowScroll >= this.header.nativeElement.offsetHeight) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
+    }
   }
 }
 

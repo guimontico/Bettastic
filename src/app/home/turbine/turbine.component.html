@@ -1,1 +1,11 @@
-<p>turbine works!</p>
+<div id="appMatch" >
+    <div *ngFor="let game of games">
+      <app-pricing-card 
+        [cardTitle] = "game.cardTitle" 
+        [cardContent] = "game.cardContent" 
+        [backgroundImage] = "game.backgroundImage"
+        [teamHomeLogo] = "game.teamHome"
+        [teamAwayLogo] = "game.teamAway"
+      ></app-pricing-card>
+    </div>
+  </div>

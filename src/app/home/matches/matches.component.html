@@ -1,11 +1,6 @@
-<div id="appMatch" >
-  <div *ngFor="let game of games">
-    <app-match-card 
-      [cardTitle] = "game.cardTitle" 
-      [cardContent] = "game.cardContent" 
-      [backgroundImage] = "game.backgroundImage"
-      [teamHomeLogo] = "game.teamHome"
-      [teamAwayLogo] = "game.teamAway"
-    ></app-match-card>
-  </div>
+<div class="body" style="margin-top: 30rem;">
+    <app-slider title="NBA" [basketGames]="nbaGames" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Euroleague" [basketGames]="euroLeagueGames" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="NBB" [basketGames]="nbbGames" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="ACB" [basketGames]="acbGames" [sliderConfig]="sliderConfig"></app-slider>
 </div>

@@ -11,10 +11,11 @@ import { HomeComponent } from './home/home/home.component';
 import { BetsComponent } from './home/bets/bets.component';
 import { MatchesComponent } from './home/matches/matches.component';
 import { TurbineComponent } from './home/turbine/turbine.component';
-import { MatchCardComponent } from './home/components/match-card/match-card.component';
+import { PricingCardComponent } from './home/components/pricing-card/pricing-card.component';
 import { CarouselComponent } from './home/components/carousel/carousel.component';
 import { FootballService } from './services/football/football.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SliderComponent } from './home/components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BetsComponent,
     MatchesComponent,
     TurbineComponent,
-    MatchCardComponent,
+    PricingCardComponent,
     CarouselComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
