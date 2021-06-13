@@ -33,17 +33,14 @@ export class MatchesComponent implements OnInit {
   constructor(private basketService: BasketService,
               private footballService: FootballService,){}
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
     this.todayDate = new Date().toISOString().split('T')[0];
-    this.nbaGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
-    this.euroLeagueGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
-    this.nbbGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
-    this.acbGames = await this.basketService.getNbaGames(this.todayDate).toPromise()
+    this.subs.push(this.basketService.getNbaGames(this.todayDate).subscribe(data => this.nbaGames = data));
+    this.subs.push(this.basketService.getEuroLeagueGames(this.todayDate).subscribe(data => this.euroLeagueGames = data));
+    this.subs.push(this.basketService.getNbbGames(this.todayDate).subscribe(data => this.nbbGames = data));
+    this.subs.push(this.basketService.getAcbGames(this.todayDate).subscribe(data => this.acbGames = data));
 
-    console.log(this.nbaGames);
-    console.log(this.euroLeagueGames);
-    console.log(this.nbbGames);
-    console.log(this.acbGames);
+    console.log("matches");
     
   }
 

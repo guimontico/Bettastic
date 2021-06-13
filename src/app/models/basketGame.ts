@@ -1,4 +1,7 @@
 export interface BasketGames {
+    response?: (ResponseEntity)[] | null;
+  }
+export interface ResponseEntity {
     id: number,
     date: string;
     time: string,

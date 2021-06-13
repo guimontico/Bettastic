@@ -15,6 +15,10 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.basketGames);
+    console.log(this.title);
+    console.log(this.sliderConfig);
+    
   }
+  
 
 }
