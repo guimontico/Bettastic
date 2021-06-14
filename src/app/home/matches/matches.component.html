@@ -1,6 +1,6 @@
 <div class="body" style="margin-top: 30rem;">
-    <app-slider title="NBA" [basketGames]="nbaGames" [sliderConfig]="sliderConfig"></app-slider>
-    <app-slider title="Euroleague" [basketGames]="euroLeagueGames" [sliderConfig]="sliderConfig"></app-slider>
-    <app-slider title="NBB" [basketGames]="nbbGames" [sliderConfig]="sliderConfig"></app-slider>
-    <app-slider title="ACB" [basketGames]="acbGames" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider *ngIf="nbaGames" title="NBA" [basketGames]="nbaGames" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider *ngIf="euroLeagueGames" title="Euroleague" [basketGames]="euroLeagueGames" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider *ngIf="nbbGames" title="NBB" [basketGames]="nbbGames" [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider *ngIf="acbGames" title="ACB" [basketGames]="acbGames" [sliderConfig]="sliderConfig"></app-slider>
 </div>

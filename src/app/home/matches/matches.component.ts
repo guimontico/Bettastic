@@ -51,6 +51,7 @@ export class MatchesComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   // tslint:disable-next-line:typedef
   handleScroll() {
+    /*
     const windowScroll = window.pageYOffset;
 
     if (windowScroll >= this.header.nativeElement.offsetHeight) {
@@ -59,5 +60,6 @@ export class MatchesComponent implements OnInit {
       this.sticky = false;
     }
   }
+  */
+  }
 }
-
