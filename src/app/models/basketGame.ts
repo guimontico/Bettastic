@@ -34,8 +34,8 @@ export interface ResponseEntity {
     flag: string
   }
   export interface Teams {
-    home: (Home),
-    away: (Away)
+    home: (Home) | null,
+    away: (Away)| null
     }
   export interface Home {
     id: number,

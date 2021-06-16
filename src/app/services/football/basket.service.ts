@@ -28,7 +28,7 @@ export class BasketService {
     constructor(private http: HttpClient) {}
 
     getNbaGames(todayDate: string): Observable<BasketGames> {
-        return this.http.get<BasketGames>(`${this.url}games?date=${todayDate}&league=${leagueId.nba}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
+        return this.http.get<BasketGames>(`${this.url}games?league=${leagueId.nba}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
           "headers": {
             "x-rapidapi-host": "v1.basketball.api-sports.io",
             "x-rapidapi-key": this.api_key
@@ -36,7 +36,7 @@ export class BasketService {
         });
     }
     getEuroLeagueGames(todayDate: string): Observable<BasketGames> {
-        return this.http.get<BasketGames>(`${this.url}games?date=${todayDate}&league=${leagueId.euroLeague}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
+        return this.http.get<BasketGames>(`${this.url}games?league=${leagueId.euroLeague}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
           "headers": {
             "x-rapidapi-host": "v1.basketball.api-sports.io",
             "x-rapidapi-key": this.api_key
@@ -44,7 +44,7 @@ export class BasketService {
         });
     }
     getNbbGames(todayDate: string): Observable<BasketGames> {
-        return this.http.get<BasketGames>(`${this.url}games?date=${todayDate}&league=${leagueId.nbb}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
+        return this.http.get<BasketGames>(`${this.url}games?league=${leagueId.nbb}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
           "headers": {
             "x-rapidapi-host": "v1.basketball.api-sports.io",
             "x-rapidapi-key": this.api_key
@@ -52,7 +52,7 @@ export class BasketService {
         });
     }
     getAcbGames(todayDate: string): Observable<BasketGames> {
-        return this.http.get<BasketGames>(`${this.url}games?date=${todayDate}&league=${leagueId.acb}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
+        return this.http.get<BasketGames>(`${this.url}games?league=${leagueId.acb}&season=${season.actual}&timezone=${timeZone.sao_paulo}`, {
           "headers": {
             "x-rapidapi-host": "v1.basketball.api-sports.io",
             "x-rapidapi-key": this.api_key
