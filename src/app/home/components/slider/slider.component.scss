@@ -6,11 +6,50 @@ h2 {
   img {
     border-radius: 5px;
   }
+
+  .court {
+    position: relative;
+    width: 60vh;
+    height: 30vh;
+    background-size: 80% 100%;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+  }
+
+  .imagelogo{
+    position: relative;
+    top: 0;
+    left: 0;
+    min-inline-size: max-content;
+  }
+
+  // #teamHome{
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(-150%, -50%);
+  // }
   
-  .movie {
+  // #teamAway{
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(30%, -50%);
+  // }
+
+  .backgroundCourt {
+    margin: 5px;
+    width: 400px;
+    height: auto;
+  }
+  
+  .game {
+    width: fit-content;
     margin: 20px 0;
   
-    .movie__images {
+    .game__images {
+      cursor: pointer;
       div.thumbnails .carousel {
         width:100%;
         display: flex;
@@ -24,5 +63,9 @@ h2 {
         }
       }
     }
+  }
+
+  .slick-item{
+    position: relative;
   }
   
